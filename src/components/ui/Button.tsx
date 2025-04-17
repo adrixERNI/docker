@@ -1,17 +1,20 @@
 import { cva, type VariantProps } from "cva";
 import type { ComponentProps } from "react";
 
-const button = cva("cursor-pointer", {
+const button = cva("", {
     variants: {
         variant: {
             primary: `text-background bg-primary hover:bg-primary-400 focus:ring-4 focus:ring-blue-300
-                      focus:outline-none`,
-            fade: "text-primary bg-primary/10 hover:bg-primary/20",
-            outline: " text-primary border-2 border-primary hover:bg-primary/10",
+                      dark:focus:ring-blue-300/20 focus:outline-none cursor-pointer`,
+            onPrimary: `text-primary bg-primary/10 hover:bg-primary/20 focus:ring-4 focus:ring-blue-100
+                        dark:focus:ring-blue-400/20 cursor-pointer`,
+            outline: " text-primary border-2 border-primary hover:bg-primary/10 cursor-pointer",
             destructive:
-                "bg-destructive text-background hover:bg-destructive-600 focus:ring-4 focus:ring-destructive/20",
-            "destructive-fade": "text-destructive bg-destructive/10 hover:bg-destructive/20",
-            ghost: "text-primary bg-transparent hover:bg-primary/10"
+                "bg-destructive text-background hover:bg-destructive-600 focus:ring-4 focus:ring-destructive/20 cursor-pointer",
+            onDestructive: `text-destructive bg-destructive/10 hover:bg-destructive/20 focus:ring-4 focus:ring-destructive-300/50
+                            dark:focus:ring-destructive-400 cursor-pointer`,
+            ghost: "text-primary bg-transparent hover:bg-primary/10 cursor-pointer",
+            disabled: "text-foreground/50 bg-primary/10 cursor-not-allowed"
         },
         size: {
             sm: "text-sm h-9 text leading-0",

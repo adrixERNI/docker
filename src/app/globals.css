@@ -1,54 +1,72 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
-    --font-inter-sans-serif: Inter, sans-serif;
+    --font-serif: Inter, sans-serif;
+
+    --clr-primary: oklch(34.883% 0.12238 257.48);
+    --clr-primary-50: oklch(65.245% 0.1792 255.82);
+    --clr-primary-100: oklch(62.217% 0.19707 256.93);
+    --clr-primary-200: oklch(56.638% 0.2114 258.52);
+    --clr-primary-300: oklch(49.574% 0.18466 258.56);
+    --clr-primary-400: oklch(42.386% 0.15431 258.16);
+    --clr-primary-500: oklch(34.883% 0.12238 257.48);
+    --clr-primary-600: oklch(23.804% 0.07482 255.45);
+    --clr-primary-700: oklch(10.901% 0.02402 237.61);
+    --clr-primary-800: oklch(0% 0 none);
+    --clr-primary-900: oklch(0% 0 none);
+    --clr-primary-950: oklch(0% 0 none);
+
+    --clr-muted: oklch(81.944% 0.00773 260.73);
+
+    --clr-destructive: oklch(62% 0.16 25);
+    --clr-destructive-50: oklch(97.5% 0.02 25);
+    --clr-destructive-100: oklch(95% 0.04 25);
+    --clr-destructive-200: oklch(90% 0.06 25);
+    --clr-destructive-300: oklch(82% 0.08 25);
+    --clr-destructive-400: oklch(72% 0.12 25);
+    --clr-destructive-500: oklch(62% 0.16 25);
+    --clr-destructive-600: oklch(52% 0.16 25);
+    --clr-destructive-700: oklch(42% 0.14 25);
+    --clr-destructive-800: oklch(32% 0.12 25);
+    --clr-destructive-900: oklch(22% 0.1 25);
+    --clr-destructive-950: oklch(15% 0.08 25);
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
 
-    --color-primary: oklch(34.883% 0.12238 257.48);
-    --color-primary-50: oklch(65.245% 0.1792 255.82);
-    --color-primary-100: oklch(62.217% 0.19707 256.93);
-    --color-primary-200: oklch(56.638% 0.2114 258.52);
-    --color-primary-300: oklch(49.574% 0.18466 258.56);
-    --color-primary-400: oklch(42.386% 0.15431 258.16);
-    --color-primary-500: oklch(34.883% 0.12238 257.48);
-    --color-primary-600: oklch(23.804% 0.07482 255.45);
-    --color-primary-700: oklch(10.901% 0.02402 237.61);
-    --color-primary-800: oklch(0% 0 none);
-    --color-primary-900: oklch(0% 0 none);
-    --color-primary-950: oklch(0% 0 none);
+    --color-primary: var(--clr-primary);
+    --color-primary-50: var(--clr-primary-50);
+    --color-primary-100: var(--clr-primary-100);
+    --color-primary-200: var(--clr-primary-200);
+    --color-primary-300: var(--clr-primary-300);
+    --color-primary-400: var(--clr-primary-400);
+    --color-primary-500: var(--clr-primary-500);
+    --color-primary-600: var(--clr-primary-600);
+    --color-primary-700: var(--clr-primary-700);
+    --color-primary-800: var(--clr-primary-800);
+    --color-primary-900: var(--clr-primary-900);
+    --color-primary-950: var(--clr-primary-950);
 
-    --color-muted: oklch(81.944% 0.00773 260.73);
-    --color-muted-50: oklch(100% 0 none);
-    --color-muted-100: oklch(100% 0 none);
-    --color-muted-200: oklch(100% 0 none);
-    --color-muted-300: oklch(94.864% 0.00172 247.84);
-    --color-muted-400: oklch(88.462% 0.00465 258.33);
-    --color-muted-500: oklch(81.944% 0.00773 260.73);
-    --color-muted-600: oklch(72.763% 0.01239 264.49);
-    --color-muted-700: oklch(63.506% 0.01653 260.72);
-    --color-muted-800: oklch(54% 0.01724 260.71);
-    --color-muted-900: oklch(44.153% 0.01408 264.42);
-    --color-muted-950: oklch(39.268% 0.01143 258.36);
-    --color-muted-950: oklch(39.268% 0.01143 258.36);
+    --color-muted: var(--clr-muted);
 
-    --color-destructive: oklch(62% 0.16 25);
-    --color-destructive-50: oklch(97.5% 0.02 25);
-    --color-destructive-100: oklch(95% 0.04 25);
-    --color-destructive-200: oklch(90% 0.06 25);
-    --color-destructive-300: oklch(82% 0.08 25);
-    --color-destructive-400: oklch(72% 0.12 25);
-    --color-destructive-500: oklch(62% 0.16 25);
-    --color-destructive-600: oklch(52% 0.16 25);
-    --color-destructive-700: oklch(42% 0.14 25);
-    --color-destructive-800: oklch(32% 0.12 25);
-    --color-destructive-900: oklch(22% 0.1 25);
-    --color-destructive-950: oklch(15% 0.08 25);
+    --color-destructive: var(--clr-destructive);
+    --color-destructive-50: var(--clr-destructive-50);
+    --color-destructive-100: var(--clr-destructive-100);
+    --color-destructive-200: var(--clr-destructive-200);
+    --color-destructive-300: var(--clr-destructive-300);
+    --color-destructive-400: var(--clr-destructive-400);
+    --color-destructive-500: var(--clr-destructive-500);
+    --color-destructive-600: var(--clr-destructive-600);
+    --color-destructive-700: var(--clr-destructive-700);
+    --color-destructive-800: var(--clr-destructive-800);
+    --color-destructive-900: var(--clr-destructive-900);
+    --color-destructive-950: var(--clr-destructive-950);
 
     --text-xs: 0.75rem;
     --text-sm: 0.8125rem;
@@ -63,16 +81,42 @@
     --text-7xl: 4.5rem;
     --text-8xl: 6rem;
     --text-9xl: 9rem;
-
-    --font-serif: var(--font-inter-sans-serif);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
+.dark {
     --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+    --foreground: #f5f5f5;
+
+    --clr-primary: oklch(80% 0.14 257.48);
+    --clr-primary-50: oklch(95% 0.1 257.48);
+    --clr-primary-100: oklch(92% 0.12 257.48);
+    --clr-primary-200: oklch(88% 0.13 257.48);
+    --clr-primary-300: oklch(84% 0.14 257.48);
+    --clr-primary-400: oklch(78% 0.13 257.48);
+    --clr-primary-500: oklch(73% 0.12 257.48);
+    --clr-primary-600: oklch(65% 0.1 257.48);
+    --clr-primary-700: oklch(54% 0.08 257.48);
+    --clr-primary-800: oklch(43% 0.06 257.48);
+    --clr-primary-900: oklch(31% 0.04 257.48);
+    --clr-primary-950: oklch(22% 0.03 257.48);
+
+    --clr-muted: oklch(30% 0.005 260.73);
+
+    --clr-destructive: oklch(70% 0.13 25);
+    --clr-destructive-50: oklch(95% 0.02 25);
+    --clr-destructive-100: oklch(90% 0.04 25);
+    --clr-destructive-200: oklch(85% 0.06 25);
+    --clr-destructive-300: oklch(75% 0.08 25);
+    --clr-destructive-400: oklch(68% 0.11 25);
+    --clr-destructive-500: oklch(60% 0.13 25);
+    --clr-destructive-600: oklch(50% 0.13 25);
+    --clr-destructive-700: oklch(40% 0.12 25);
+    --clr-destructive-800: oklch(30% 0.1 25);
+    --clr-destructive-900: oklch(22% 0.08 25);
+    --clr-destructive-950: oklch(15% 0.06 25);
+
+    --font-serif: Inter, sans-serif;
+}
 
 body {
     background: var(--background);
