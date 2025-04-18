@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "cva";
-import type { ComponentProps } from "react";
+import React from "react";
 
-const button = cva("", {
+const button = cva("flex justify-center items-center font-medium", {
     variants: {
         variant: {
             primary: `text-background bg-primary hover:bg-primary-400 focus:ring-4 focus:ring-blue-300
@@ -17,39 +17,51 @@ const button = cva("", {
             disabled: "text-foreground/50 bg-primary/10 cursor-not-allowed"
         },
         size: {
-            sm: "text-sm h-9 text leading-0",
-            base: "text-base py-2 px-4",
-            md: "text-base py-3 px-6",
-            lg: "text-md py-4 px-8"
+            sm: "text-sm h-9 py-2 px-4",
+            base: "text-sm h-9 py-2 px-4",
+            md: "text-base py-3 px-5"
         },
         radius: {
             md: "rounded-md",
             lg: "rounded-lg",
             xl: "rounded-xl",
             full: "rounded-full"
+        },
+        fullWidth: {
+            true: "w-full",
+            false: "w-max"
         }
     },
     defaultVariants: {
         variant: "primary",
         size: "base",
-        radius: "lg"
+        radius: "xl"
     }
 });
 
-type BaseButtonProps = ComponentProps<"button">;
+type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ButtonProps extends VariantProps<typeof button>, BaseButtonProps {
     title?: string;
 }
 
-const Button = ({ variant, size, radius, title, className, ...props }: ButtonProps) => {
+const Button = ({
+    variant,
+    size,
+    radius,
+    fullWidth,
+    title,
+    className,
+    children,
+    ...props
+}: ButtonProps) => {
     return (
         <button
             type="button"
-            className={`${button({ variant, size, radius })} ${className}`}
+            className={`${button({ variant, size, radius, fullWidth })} ${className}`}
             {...props}
         >
-            {title}
+            {title ?? children}
         </button>
     );
 };

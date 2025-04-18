@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ThemeToggler from "@/components/ui/ThemeToggler";
 
 const interSansSerif = Inter({
     variable: "--font-inter-sans-serif",
@@ -20,7 +21,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="">
-            <body className={`${interSansSerif.variable} antialiased`}>{children}</body>
+            <body className={`${interSansSerif.variable} antialiased`}>
+                {children}
+                <ThemeToggler />
+            </body>
         </html>
     );
 }
