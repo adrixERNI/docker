@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 import ThemeToggler from "@/components/ui/ThemeToggler";
+import GoogleAuthProvider from "@/providers/GoogleAuthProvider";
 
 const interSansSerif = Inter({
     variable: "--font-inter-sans-serif",
@@ -20,11 +22,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="">
-            <body className={`${interSansSerif.variable} antialiased`}>
-                {children}
-                <ThemeToggler />
-            </body>
-        </html>
+        <GoogleAuthProvider>
+            <html lang="en" className="">
+                <body className={`${interSansSerif.variable} antialiased`}>
+                    {children}
+                    <ThemeToggler />
+                </body>
+            </html>
+        </GoogleAuthProvider>
     );
 }

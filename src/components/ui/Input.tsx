@@ -8,8 +8,8 @@ import { TbEyeClosed, TbEye } from "react-icons/tb";
 const input = cva("w-full", {
     variants: {
         variant: {
-            default:
-                "bg-muted/10 border border-muted text-foreground text-base focus:outline-blue-500 focus:border-primary block"
+            default: `bg-muted-100/10 dark:bg-muted-100/5 border border-muted-100 dark:border-muted-100/10 text-foreground text-base
+                      dark:focus:ring-3 dark:focus:ring-primary focus:outline-primary dark:outline-0 focus:border-primary block`
         },
         size: {
             base: "py-2 px-2.5",
@@ -72,6 +72,7 @@ const Input = ({ variant, size, radius, label, errorMessage, type, ...props }: I
                 {type === "password" && (
                     <>
                         <button
+                            type="button"
                             className="absolute flex justify-center items-center right-0 top-0 bottom-0 cursor-pointer pr-5 pt-0.5"
                             onClick={handleTogglePassword}
                         >

@@ -1,10 +1,12 @@
 @import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
     --background: #ffffff;
-    --foreground: #171717;
+    --foreground: #1a1a1a;
     --font-serif: Inter, sans-serif;
 
     --clr-primary: oklch(34.883% 0.12238 257.48);
@@ -20,7 +22,31 @@
     --clr-primary-900: oklch(0% 0 none);
     --clr-primary-950: oklch(0% 0 none);
 
-    --clr-muted: oklch(81.944% 0.00773 260.73);
+    --clr-muted: oklch(55.102% 0.02336 264.36);
+    --clr-muted-50: oklch(85.673% 0.00764 260.73);
+    --clr-muted-100: oklch(82.317% 0.0103 267.34);
+    --clr-muted-200: oklch(75.71% 0.01495 268.45);
+    --clr-muted-300: oklch(68.926% 0.01847 267.72);
+    --clr-muted-400: oklch(61.895% 0.02267 264.4);
+    --clr-muted-500: oklch(55.102% 0.02336 264.36);
+    --clr-muted-600: oklch(45.509% 0.01801 260.7);
+    --clr-muted-700: oklch(35.508% 0.01329 261.73);
+    --clr-muted-800: oklch(24.312% 0.00818 264.41);
+    --clr-muted-900: oklch(11.563% 0.00322 285.88);
+    --clr-muted-950: oklch(0% 0 none);
+
+    --clr-border: oklch(92.797% 0 none);
+    --clr-border-50: oklch(100% 0 none);
+    --clr-border-100: oklch(100% 0 none);
+    --clr-border-200: oklch(100% 0 none);
+    --clr-border-300: oklch(100% 0 none);
+    --clr-border-400: oklch(98.809% 0 none);
+    --clr-border-500: oklch(92.797% 0 none);
+    --clr-border-600: oklch(84.212% 0 none);
+    --clr-border-700: oklch(75.402% 0 none);
+    --clr-border-800: oklch(66.326% 0 none);
+    --clr-border-900: oklch(56.926% 0 none);
+    --clr-border-950: oklch(52.081% 0 none);
 
     --clr-destructive: oklch(62% 0.16 25);
     --clr-destructive-50: oklch(97.5% 0.02 25);
@@ -54,6 +80,30 @@
     --color-primary-950: var(--clr-primary-950);
 
     --color-muted: var(--clr-muted);
+    --color-muted-50: var(--clr-muted-50);
+    --color-muted-100: var(--clr-muted-100);
+    --color-muted-200: var(--clr-muted-200);
+    --color-muted-300: var(--clr-muted-300);
+    --color-muted-400: var(--clr-muted-400);
+    --color-muted-500: var(--clr-muted-500);
+    --color-muted-600: var(--clr-muted-600);
+    --color-muted-700: var(--clr-muted-700);
+    --color-muted-800: var(--clr-muted-800);
+    --color-muted-900: var(--clr-muted-900);
+    --color-muted-950: var(--clr-muted-950);
+
+    --color-border: var(--clr-border);
+    --color-border-50: var(--clr-border-50);
+    --color-border-100: var(--clr-border-100);
+    --color-border-200: var(--clr-border-200);
+    --color-border-300: var(--clr-border-300);
+    --color-border-400: var(--clr-border-400);
+    --color-border-500: var(--clr-border-500);
+    --color-border-600: var(--clr-border-600);
+    --color-border-700: var(--clr-border-700);
+    --color-border-800: var(--clr-border-800);
+    --color-border-900: var(--clr-border-900);
+    --color-border-950: var(--clr-border-950);
 
     --color-destructive: var(--clr-destructive);
     --color-destructive-50: var(--clr-destructive-50);
@@ -84,7 +134,7 @@
 }
 
 .dark {
-    --background: #0a0a0a;
+    --background: #1a1a1a;
     --foreground: #f5f5f5;
 
     --clr-primary: oklch(34.883% 0.12238 257.48);
@@ -100,7 +150,31 @@
     --clr-primary-900: oklch(0% 0 none);
     --clr-primary-950: oklch(0% 0 none);
 
-    --clr-muted: oklch(30% 0.005 260.73);
+    --clr-muted: oklch(81.944% 0.00773 260.73);
+    --clr-muted-50: oklch(100% 0 none);
+    --clr-muted-100: oklch(100% 0 none);
+    --clr-muted-200: oklch(100% 0 none);
+    --clr-muted-300: oklch(94.864% 0.00172 247.84);
+    --clr-muted-400: oklch(88.462% 0.00465 258.33);
+    --clr-muted-500: oklch(81.944% 0.00773 260.73);
+    --clr-muted-600: oklch(72.763% 0.01239 264.49);
+    --clr-muted-700: oklch(63.506% 0.01653 260.72);
+    --clr-muted-800: oklch(54% 0.01724 260.71);
+    --clr-muted-900: oklch(44.153% 0.01408 264.42);
+    --clr-muted-950: oklch(39.268% 0.01143 258.36);
+
+    --clr-border: oklch(25.196% 0 none);
+    --clr-border-50: oklch(59.31% 0 none);
+    --clr-border-100: oklch(55.897% 0 none);
+    --clr-border-200: oklch(48.55% 0 none);
+    --clr-border-300: oklch(41.283% 0 none);
+    --clr-border-400: oklch(33.289% 0 none);
+    --clr-border-500: oklch(25.196% 0 none);
+    --clr-border-600: oklch(12.212% 0 none);
+    --clr-border-700: oklch(0% 0 none);
+    --clr-border-800: oklch(0% 0 none);
+    --clr-border-900: oklch(0% 0 none);
+    --clr-border-950: oklch(0% 0 none);
 
     --clr-destructive: oklch(70% 0.13 25);
     --clr-destructive-50: oklch(95% 0.02 25);

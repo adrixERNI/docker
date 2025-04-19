@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import { MdDarkMode } from "react-icons/md";
 import Button from "./Button";
 
 const ThemeToggler = () => {
@@ -29,8 +30,8 @@ const ThemeToggler = () => {
 
     return (
         <div className="fixed bottom-5 end-5" onClick={handleToggleTheme}>
-            <Button size="sm" radius="full">
-                {theme === "dark" ? "Light mode" : "Dark mode"}
+            <Button size="icon-md" radius="full">
+                <MdDarkMode size={18} />
             </Button>
         </div>
     );

@@ -1,10 +1,10 @@
 import { cva, type VariantProps } from "cva";
-import React from "react";
+import React, { type ReactNode, type ComponentProps } from "react";
 
 const button = cva("flex justify-center items-center font-medium", {
     variants: {
         variant: {
-            primary: `text-background bg-primary hover:bg-primary-400 focus:ring-4 focus:ring-blue-300
+            primary: `text-background dark:text-foreground bg-primary dark:bg-primary-400 hover:bg-primary-400 focus:ring-4 focus:ring-blue-300
                       dark:focus:ring-blue-300/20 focus:outline-none cursor-pointer`,
             onPrimary: `text-primary bg-primary/10 hover:bg-primary/20 focus:ring-4 focus:ring-blue-100
                         dark:focus:ring-blue-400/20 cursor-pointer`,
@@ -19,7 +19,9 @@ const button = cva("flex justify-center items-center font-medium", {
         size: {
             sm: "text-sm h-9 py-2 px-4",
             base: "text-sm h-9 py-2 px-4",
-            md: "text-base py-3 px-5"
+            md: "text-base py-3 px-5",
+            "icon-base": "aspect-square p-2",
+            "icon-md": "aspect-square p-3"
         },
         radius: {
             md: "rounded-md",
@@ -39,10 +41,11 @@ const button = cva("flex justify-center items-center font-medium", {
     }
 });
 
-type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type BaseButtonProps = ComponentProps<"button">;
 
 interface ButtonProps extends VariantProps<typeof button>, BaseButtonProps {
     title?: string;
+    icon?: ReactNode;
 }
 
 const Button = ({
@@ -51,6 +54,7 @@ const Button = ({
     radius,
     fullWidth,
     title,
+    icon,
     className,
     children,
     ...props
@@ -61,6 +65,7 @@ const Button = ({
             className={`${button({ variant, size, radius, fullWidth })} ${className}`}
             {...props}
         >
+            {icon && <span className="mr-2">{icon}</span>}
             {title ?? children}
         </button>
     );
