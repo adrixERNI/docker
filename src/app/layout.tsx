@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import Alert from "@/components/ui/Alert";
 import ThemeToggler from "@/components/ui/ThemeToggler";
 import GoogleAuthProvider from "@/providers/GoogleAuthProvider";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
                 <body className={`${interSansSerif.variable} antialiased`}>
                     {children}
                     <ThemeToggler />
+                    <Alert />
                 </body>
             </html>
         </GoogleAuthProvider>

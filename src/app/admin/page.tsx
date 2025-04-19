@@ -7,8 +7,8 @@ import AdminLoginTitle from "@/modules/Admin/AdminLogin/AdminLoginTitle";
 
 const AdminLoginPage = () => {
     return (
-        <MainContainer className="flex items-center justify-center h-screen">
-            <Container className="max-w-[30rem] mb-14">
+        <MainContainer>
+            <Container className="max-w-[30rem] " center>
                 <AdminLoginTitle />
                 <AdminLoginForm />
                 <AdminLoginFooter />

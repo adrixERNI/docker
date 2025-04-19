@@ -3,7 +3,7 @@ import Typography from "@/components/ui/Typography";
 
 const AdminLoginFooter = () => {
     return (
-        <div className="absolute bottom-5 left-0 right-0 text-center">
+        <div className="text-center mt-10">
             <Typography.Span title="© 2025 Betteraskerni" color="muted" />
         </div>
     );

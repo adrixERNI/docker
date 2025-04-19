@@ -72,6 +72,7 @@ const Input = ({ variant, size, radius, label, errorMessage, type, ...props }: I
                 {type === "password" && (
                     <>
                         <button
+                            tabIndex={-1}
                             type="button"
                             className="absolute flex justify-center items-center right-0 top-0 bottom-0 cursor-pointer pr-5 pt-0.5"
                             onClick={handleTogglePassword}

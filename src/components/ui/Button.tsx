@@ -8,12 +8,13 @@ const button = cva("flex justify-center items-center font-medium", {
                       dark:focus:ring-blue-300/20 focus:outline-none cursor-pointer`,
             onPrimary: `text-primary bg-primary/10 hover:bg-primary/20 focus:ring-4 focus:ring-blue-100
                         dark:focus:ring-blue-400/20 cursor-pointer`,
-            outline: " text-primary border-2 border-primary hover:bg-primary/10 cursor-pointer",
+            secondary: " text-primary border-2 border-primary hover:bg-primary/10 cursor-pointer",
+            outline: " text-foreground border border-border cursor-pointer",
             destructive:
                 "bg-destructive text-background hover:bg-destructive-600 focus:ring-4 focus:ring-destructive/20 cursor-pointer",
             onDestructive: `text-destructive bg-destructive/10 hover:bg-destructive/20 focus:ring-4 focus:ring-destructive-300/50
                             dark:focus:ring-destructive-400 cursor-pointer`,
-            ghost: "text-primary bg-transparent hover:bg-primary/10 cursor-pointer",
+            ghost: "text-primary dark:text-primary-300 bg-transparent hover:bg-primary/10 cursor-pointer",
             disabled: "text-foreground/50 bg-primary/10 cursor-not-allowed"
         },
         size: {
