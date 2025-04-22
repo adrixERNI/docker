@@ -3,22 +3,24 @@
 import Flex from "@/components/ui/Flex";
 import Logo from "@/components/ui/Logo";
 import Container from "@/containers/Container";
-import MainContainer from "@/containers/MainContainer";
-import MentorLogin from "@/modules/Mentor/MentorLogin";
+import MentorLogin from "@/modules/Mentor/MentorLogin/MentorLogin";
 import TraineeLogin from "@/modules/Trainee/TraineeLogin/TraineeLogin";
 
 function Home() {
     return (
-        <MainContainer>
-            <Container center>
-                <Logo className="mx-auto w-max mb-10" />
-                <Flex className="py-10">
+        <Container className="flex items-center justify-center min-h-screen py-5 lg:pb-20">
+            <Container>
+                <Flex className="py-4">
+                    <Logo className="mx-auto w-max" />
+                </Flex>
+
+                <Flex direction="col" className="flex items-start lg:flex-row py-7">
                     <TraineeLogin />
-                    <Flex className="w-0.5 h-56 bg-border" />
+                    <Flex className="mx-auto max-w-96 w-full lg:w-0.5 h-0.5 lg:h-56 p bg-border my-10 lg:my-0" />
                     <MentorLogin />
                 </Flex>
             </Container>
-        </MainContainer>
+        </Container>
     );
 }
 

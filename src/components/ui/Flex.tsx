@@ -1,5 +1,6 @@
 import { cva, type VariantProps } from "cva";
 import React, { type ComponentProps } from "react";
+import { twMerge } from "tailwind-merge";
 
 const flex = cva("flex", {
     variants: {
@@ -62,7 +63,10 @@ export const Flex = ({
     ...props
 }: FlexProps) => {
     return (
-        <div className={flex({ direction, align, justify, wrap, gap, className })} {...props}>
+        <div
+            className={twMerge(flex({ direction, align, justify, wrap, gap }), className)}
+            {...props}
+        >
             {children}
         </div>
     );

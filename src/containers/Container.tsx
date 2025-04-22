@@ -8,19 +8,9 @@ const container = cva("w-full max-w-[80rem] mx-auto", {
 
 type BaseContainerProps = ComponentProps<"div">;
 
-interface ContainerProps extends BaseContainerProps, VariantProps<typeof container> {
-    center?: boolean;
-}
+interface ContainerProps extends BaseContainerProps, VariantProps<typeof container> {}
 
-const Container = ({ center, className, ...props }: ContainerProps) => {
-    if (center) {
-        return (
-            <div className="flex items-center justify-center w-full h-full">
-                <div className={twMerge(container({}), className)} {...props} />
-            </div>
-        );
-    }
-
+const Container = ({ className, ...props }: ContainerProps) => {
     return <div className={twMerge(container({}), className)} {...props} />;
 };
 

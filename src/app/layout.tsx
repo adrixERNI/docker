@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Alert from "@/components/ui/Alert";
 import ThemeToggler from "@/components/ui/ThemeToggler";
+import MainContainer from "@/containers/MainContainer";
 import GoogleAuthProvider from "@/providers/GoogleAuthProvider";
 
 const interSansSerif = Inter({
@@ -26,9 +27,11 @@ export default function RootLayout({
         <GoogleAuthProvider>
             <html lang="en" className="">
                 <body className={`${interSansSerif.variable} antialiased`}>
-                    {children}
-                    <ThemeToggler />
-                    <Alert />
+                    <MainContainer>
+                        {children}
+                        <ThemeToggler />
+                        <Alert />
+                    </MainContainer>
                 </body>
             </html>
         </GoogleAuthProvider>
