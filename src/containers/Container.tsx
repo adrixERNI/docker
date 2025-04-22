@@ -11,7 +11,7 @@ type BaseContainerProps = ComponentProps<"div">;
 interface ContainerProps extends BaseContainerProps, VariantProps<typeof container> {}
 
 const Container = ({ className, ...props }: ContainerProps) => {
-    return <div className={twMerge(container({}), className)} {...props} />;
+    return <div className={`${twMerge(container({}), className)}`} {...props} />;
 };
 
 export default Container;

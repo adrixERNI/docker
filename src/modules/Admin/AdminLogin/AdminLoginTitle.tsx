@@ -6,7 +6,10 @@ import Typography from "@/components/ui/Typography";
 const AdminLoginTitle = () => {
     return (
         <Flex direction="col" className="mb-6">
-            <Logo className="mb-4" />
+            <Flex className="mb-4">
+                <Logo />
+            </Flex>
+
             <Typography.H3 title="Admin Login" weight="medium" className="mb-2" />
             <Typography.P
                 size="md"

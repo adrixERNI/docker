@@ -3,8 +3,10 @@ import VerifySignInLoading from "@/modules/Common/VerifySignIn/VerifySignInLoadi
 
 const VerifySignInPage = () => {
     return (
-        <Container center className="flex justify-center">
-            <VerifySignInLoading />
+        <Container className="flex items-center justify-center min-h-screen py-5 lg:pb-20">
+            <Container>
+                <VerifySignInLoading />
+            </Container>
         </Container>
     );
 };

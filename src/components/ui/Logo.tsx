@@ -1,20 +1,37 @@
 "use client";
 
+import { cva, type VariantProps } from "cva";
 import Link from "next/link";
 import type { ComponentProps } from "react";
 import { BiLogoEdge } from "react-icons/bi";
 
-type BaseLogoProps = ComponentProps<"div">;
+const logoSize = cva("", {
+    variants: {
+        size: {
+            sm: "w-[35px] h-[35px] aspect-square",
+            base: "w-[44px] h-[44px] aspect-square",
+            md: "w-[55px] h-[55px] aspect-square"
+        }
+    },
+    defaultVariants: {
+        size: "base"
+    }
+});
 
-const Logo = (props: BaseLogoProps) => {
+type BaseLogoProps = ComponentProps<"div"> & VariantProps<typeof logoSize>;
+
+const Logo = ({ size, ...props }: BaseLogoProps) => {
     return (
-        <div {...props}>
+        <div {...props} className={logoSize({ size })}>
             <Link href="/">
-                <BiLogoEdge size={36} className="text-primary" />
-                {/* <Image alt="Logo" src="/linkedout_logo.svg" width={44} height={44} /> */}
+                <BiLogoEdge size="100%" className="text-primary" />
             </Link>
         </div>
     );
 };
 
 export default Logo;
+
+{
+    /* <Image alt="Logo" src="/linkedout_logo.svg" width={44} height={44} /> */
+}

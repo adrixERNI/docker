@@ -1,5 +1,6 @@
 import { cva, type VariantProps } from "cva";
 import React, { type ComponentProps } from "react";
+import { twMerge } from "tailwind-merge";
 
 const typography = cva("", {
     variants: {
@@ -38,8 +39,10 @@ const typography = cva("", {
         color: {
             foreground: "text-foreground",
             background: "text-background",
+            primary: "text-primary",
             muted: "text-muted",
-            "muted-background": "text-muted-background"
+            "muted-background": "text-muted-background",
+            destructive: "text-destructive"
         },
         textCenter: {
             true: "text-center",
@@ -70,7 +73,10 @@ export const H1 = ({
 }: TypographyProps) => {
     return (
         <h1
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -90,7 +96,10 @@ export const H2 = ({
 }: TypographyProps) => {
     return (
         <h2
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -110,7 +119,10 @@ export const H3 = ({
 }: TypographyProps) => {
     return (
         <h3
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -130,7 +142,10 @@ export const H4 = ({
 }: TypographyProps) => {
     return (
         <h4
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -150,7 +165,10 @@ export const H5 = ({
 }: TypographyProps) => {
     return (
         <h5
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -170,7 +188,10 @@ export const H6 = ({
 }: TypographyProps) => {
     return (
         <h6
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -190,7 +211,10 @@ export const P = ({
 }: TypographyProps) => {
     return (
         <p
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}
@@ -210,7 +234,10 @@ export const Span = ({
 }: TypographyProps) => {
     return (
         <span
-            className={typography({ size, weight, tracking, color, textCenter, className })}
+            className={twMerge(
+                typography({ size, weight, tracking, color, textCenter }),
+                className
+            )}
             {...props}
         >
             {title}

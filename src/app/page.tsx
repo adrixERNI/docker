@@ -10,8 +10,8 @@ function Home() {
     return (
         <Container className="flex items-center justify-center min-h-screen py-5 lg:pb-20">
             <Container>
-                <Flex className="py-4">
-                    <Logo className="mx-auto w-max" />
+                <Flex justify="center" className="py-4">
+                    <Logo />
                 </Flex>
 
                 <Flex direction="col" className="flex items-start lg:flex-row py-7">

@@ -15,8 +15,8 @@ const VerifySignInLoading = () => {
     const error = searchParams.get("error");
 
     const sendTokenToServer = async () => {
-        const response = await fetch("http://localhost:5000/auth/google", {
-            body: JSON.stringify({ code: code }),
+        const response = await fetch("http://localhost:5000/google/trainee", {
+            body: JSON.stringify({ code }),
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
