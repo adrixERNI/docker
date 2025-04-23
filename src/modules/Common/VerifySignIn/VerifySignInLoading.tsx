@@ -45,7 +45,7 @@ const VerifySignInLoading = () => {
     return (
         <Flex direction="col" align="center" justify="center" gap="lg">
             <Spinner size="xl" className="mx-auto" />
-            <Typography.Span title="Verifying..." />
+            <Typography.Span title="Verifying..." weight="medium" />
         </Flex>
     );
 };

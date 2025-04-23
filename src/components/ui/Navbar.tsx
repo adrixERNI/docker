@@ -26,7 +26,7 @@ interface NavbarLinkProps {
     weight?: ComponentProps<typeof Typography.Span>["weight"];
 }
 
-export const NavbarLink = ({ href, title, weight }: NavbarLinkProps) => {
+export const NavbarLink = ({ href, title }: NavbarLinkProps) => {
     const currentPathname = usePathname();
 
     return (
@@ -35,8 +35,8 @@ export const NavbarLink = ({ href, title, weight }: NavbarLinkProps) => {
                 title={title}
                 className={
                     currentPathname === href
-                        ? "text-primary-400 font-semibold"
-                        : "text-muted font-normal"
+                        ? "text-primary-400 font-semibold hover:text-primary-300"
+                        : "text-muted font-medium hover:text-muted-400"
                 }
             />
         </Link>

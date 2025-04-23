@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <Flex
             direction="row"
-            className="sticky top-0 start-0 end-0 border-b border-border bg-background py-3"
+            className="bg-background dark:bg-zinc-900 sticky top-0 start-0 end-0 border-b border-border py-3 z-1"
         >
             <Container>
                 <Flex direction="row" className="justify-between items-center">

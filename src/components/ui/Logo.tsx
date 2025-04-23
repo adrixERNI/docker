@@ -22,11 +22,11 @@ type BaseLogoProps = ComponentProps<"div"> & VariantProps<typeof logoSize>;
 
 const Logo = ({ size, ...props }: BaseLogoProps) => {
     return (
-        <div {...props} className={logoSize({ size })}>
-            <Link href="/">
-                <BiLogoEdge size="100%" className="text-primary" />
-            </Link>
-        </div>
+        <Link href="/">
+            <div {...props} className={logoSize({ size })}>
+                <BiLogoEdge size="100%" className="text-primary dark:text-primary-300" />
+            </div>
+        </Link>
     );
 };
 
